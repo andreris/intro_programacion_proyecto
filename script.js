@@ -175,6 +175,8 @@ if (continuar.toLowerCase() !== "si") {
         }
 
 //LISTA DE PERSONAJES DISNEY (NOMBRES CORTOS, MAXIMO 5 LETRAS)
+// MODIFICACION:  SE REGRESA A LA ESTRUCTURA DEL NIVEL 1 PERO CON PERSONAJES DE DISNEY
+
         let personajes = [ "elsa", "simba", "nemo", "dory", "olaf", "moana", "woody", "buzz", "mufasa", "aladdin", "ariel", "mulan", "tarzan"]
 
         let ronda3 = 1
@@ -190,7 +192,7 @@ if (continuar.toLowerCase() !== "si") {
 
                 let secuenciaPersonajes = []
 //DIFERENCIA CON LOS NIVELES ANTERIORES: SE USAN PERSONAJES DISNEY
-// AUMENTO DE LA CANTIDAD DE PERSONAJES PARA MEMORIZAR
+// AUMENTO DE LA CANTIDAD DE PERSONAJES PARA MEMORIZAR- UNO POR RONDA
                 while (secuenciaPersonajes.length < ronda3) {
                     let aleatorio3 =
                       Math.floor(Math.random() * personajes.length)
