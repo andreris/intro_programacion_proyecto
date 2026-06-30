@@ -1,8 +1,9 @@
+
 let jugadores = []
 let puntajes = []
 
 let cantidad = parseInt(prompt("Ingresa la cantidad de jugadores"))
-
+//NIVEL 1------------------------------------------------------------------------
 for (let i = 0; i < cantidad; i++) {
     let nombre = prompt( "Ingrese el nombre del jugador " + (i + 1)
     )
@@ -64,7 +65,7 @@ while (ronda <= 7) {
 
     ronda++
 }
-// SE DETERMINA EL GANADOR DEL NIVEL 1
+// SE DA EL GANADOR DEL NIVEL 1
 let ganador = 0
 
 for (let i = 1; i < puntajes.length; i++) {
@@ -86,7 +87,7 @@ if (continuar.toLowerCase() !== "si") {
 } else {
 
     alert("COMENZAMOS CON EL NIVEL 2: NUMEROS")
-
+//NIVEL 2------------------------------------------------------------------------
 // REINICIO DE PUNTAJES PARA EL NIVEL 2
     for (let i = 0; i < puntajes.length; i++) {
         puntajes[i] = 0
@@ -104,10 +105,10 @@ if (continuar.toLowerCase() !== "si") {
         while (turno2 < jugadores.length) {
 
             let secuenciaNumeros = []
-// AUMENTO DE LA CANTIDAD DE NUMEROS PARA MEMORIZAR
+//DIFERENCIA CON EL NIVEL 1: SE USAN NUMEROS DE 2 DIGITOS AL AZAR           
+// MODIFICACION: AUMENTO DE LA CANTIDAD DE NUMEROS PARA MEMORIZAR
             while (secuenciaNumeros.length < ronda2) {
-                let aleatorio2 =
-                  Math.floor(Math.random() * 90) + 10
+                let aleatorio2 = Math.floor(Math.random() * 90) + 10
 
                 secuenciaNumeros.push(aleatorio2)
             }
@@ -143,7 +144,7 @@ if (continuar.toLowerCase() !== "si") {
 
         ronda2++
     }
-// SE DETERMINA EL GANADOR DEL NIVEL 2
+// SE DA EL GANADOR DEL NIVEL 2
     let ganador2 = 0
 
     for (let i = 1; i < puntajes.length; i++) {
@@ -155,4 +156,90 @@ if (continuar.toLowerCase() !== "si") {
 //ANUNCIO DE GANADOR
     alert( "GANADOR DEL NIVEL 2:" + jugadores[ganador2] + "\nPuntos:" + puntajes[ganador2])
 
+//CONTINUAR CON EL SIGUIENTE NIVEL
+    let continuar2 = prompt("DESEA CONTINUAR CON EL NIVEL 3 (si / no)")
+
+    if (continuar2.toLowerCase() !== "si") {
+
+        alert("EL JUEGO TERMINO")
+
+    } else {
+
+        alert("COMENZAMOS CON EL NIVEL 3: PERSONAJES DISNEY")
+
+
+//NIVEL 3------------------------------------------------------------------------        
+// REINICIO DE PUNTAJES PARA EL NIVEL 3
+        for (let i = 0; i < puntajes.length; i++) {
+            puntajes[i] = 0
+        }
+
+//LISTA DE PERSONAJES DISNEY (NOMBRES CORTOS, MAXIMO 5 LETRAS)
+        let personajes = [ "elsa", "simba", "nemo", "dory", "olaf", "moana", "woody", "buzz", "mufasa", "aladdin", "ariel", "mulan", "tarzan"]
+
+        let ronda3 = 1
+
+// INDICACION DE CUANTAS RONDAS SERAN- ESTE CASO 7
+        while (ronda3 <= 7) {
+
+            alert("RONDA" + ronda3)
+
+            let turno3 = 0
+
+            while (turno3 < jugadores.length) {
+
+                let secuenciaPersonajes = []
+//DIFERENCIA CON LOS NIVELES ANTERIORES: SE USAN PERSONAJES DISNEY
+// AUMENTO DE LA CANTIDAD DE PERSONAJES PARA MEMORIZAR
+                while (secuenciaPersonajes.length < ronda3) {
+                    let aleatorio3 =
+                      Math.floor(Math.random() * personajes.length)
+
+                    secuenciaPersonajes.push(personajes[aleatorio3])
+                }
+//TURNO DEL JUGADOR
+                alert("Turno de " + jugadores[turno3] + "\nMemoriza:\n" +  secuenciaPersonajes.join(" ")
+                )
+
+                let respuesta3 = prompt( "ESCRIBE LOS PERSONAJES CON ESPACIOS:").toLowerCase()
+
+                if (respuesta3 === secuenciaPersonajes.join(" ")) {
+
+                    alert("Atinaste: ganaste 10 puntos")
+//VALOR DE LOS PUNTAJES
+                    puntajes[turno3] += 10
+
+                } else {
+
+                    alert("Incorrecto.\nLa respuesta era:\n" + secuenciaPersonajes.join(" "))
+                }
+
+                turno3++
+            }
+//MARCADOR DE PUNTAJES
+            let marcador3 = "PUNTAJES\n"
+
+            for (let i = 0; i < jugadores.length; i++) {
+
+                marcador3 +=
+                    jugadores[i] + ": " + puntajes[i] + " puntos\n"
+            }
+
+            alert(marcador3)
+
+            ronda3++
+        }
+// SE DA EL GANADOR DEL NIVEL 3
+        let ganador3 = 0
+
+        for (let i = 1; i < puntajes.length; i++) {
+
+            if (puntajes[i] > puntajes[ganador3]) {
+                ganador3 = i
+            }
+        }
+//ANUNCIO DE GANADOR
+        alert( "GANADOR DEL NIVEL 3:" + jugadores[ganador3] + "\nPuntos:" + puntajes[ganador3])
+
+    }
 }
