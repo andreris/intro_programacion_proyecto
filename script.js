@@ -26,7 +26,7 @@ while (ronda <= 7) {
 
         let secuencia = []
 
-        while (secuencia.length < 3) {
+        while (secuencia.length < ronda) {
             let aleatorio =
               Math.floor(Math.random() * colores.length)
 
