@@ -11,7 +11,7 @@ for (let i = 0; i < cantidad; i++) {
     puntajes.push(0)
 }
 //CANTIDAD DE COLORES
-let colores = [ "rojo","azul","verde","amarillo","morado" ]
+let colores = [ "rojo","azul","verde","amarillo","morado","rosado","naranja" ]
 
 let ronda = 1
 
