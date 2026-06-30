@@ -25,7 +25,7 @@ while (ronda <= 7) {
     while (turno < jugadores.length) {
 
         let secuencia = []
-
+// AUMENTO DE LA CANTIDAD DE COLORES PARA MEMORIZAR
         while (secuencia.length < ronda) {
             let aleatorio =
               Math.floor(Math.random() * colores.length)
@@ -64,7 +64,7 @@ while (ronda <= 7) {
 
     ronda++
 }
-
+// SE DETERMINA EL GANADOR DEL NIVEL 1
 let ganador = 0
 
 for (let i = 1; i < puntajes.length; i++) {
