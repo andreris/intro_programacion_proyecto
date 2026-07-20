@@ -28,6 +28,17 @@ const obtenerGanador = (puntajes) => {
     return ganador
 }
 
+//FUNCION 3-------------
+//GENERA UNA SECUENCIA ALEATORIA PARA EVITAR REPETIR EL MISMO CODIGO EN LOS NIVELES
+const generarSecuencia = (elementos, cantidad) => {
+    let secuencia = []
+    while (secuencia.length < cantidad) {
+        let posicionAleatoria = Math.floor(Math.random() * elementos.length)
+        secuencia.push(elementos[posicionAleatoria])
+    }
+    return secuencia
+}
+
 //NIVEL 1------------------------------------------------------------------------
 
 let cantidad = parseInt(prompt("Ingresa la cantidad de jugadores"))
@@ -47,15 +58,9 @@ while (ronda <= 7) {
     alert("RONDA" + ronda)
     let turno = 0
     while (turno < jugadores.length) {
-        let secuencia = []
-        
 // AUMENTO DE LA CANTIDAD DE COLORES PARA MEMORIZAR
-        while (secuencia.length < ronda) {
-            let aleatorio =
-              Math.floor(Math.random() * colores.length)
-
-            secuencia.push(colores[aleatorio])
-        }
+//-----CAMBIO CON FUNCION DE FLECHA-----
+        let secuencia = generarSecuencia(colores, ronda)
 //TURNO DEL JUGADOR
         alert("Turno de " + jugadores[turno] + "\nMemoriza:\n" +  secuencia.join(" ")
         )
@@ -191,15 +196,10 @@ if (continuar.toLowerCase() !== "si") {
 
             while (turno3 < jugadores.length) {
 
-                let secuenciaPersonajes = []
 //DIFERENCIA CON LOS NIVELES ANTERIORES: SE USAN PERSONAJES DISNEY
 // AUMENTO DE LA CANTIDAD DE PERSONAJES PARA MEMORIZAR- UNO POR RONDA
-                while (secuenciaPersonajes.length < ronda3) {
-                    let aleatorio3 =
-                      Math.floor(Math.random() * personajes.length)
-
-                    secuenciaPersonajes.push(personajes[aleatorio3])
-                }
+//-----CAMBIO CON FUNCION DE FLECHA-----
+                let secuenciaPersonajes = generarSecuencia(personajes, ronda3)
 //TURNO DEL JUGADOR
                 alert("Turno de " + jugadores[turno3] + "\nMemoriza:\n" +  secuenciaPersonajes.join(" ")
                 )
