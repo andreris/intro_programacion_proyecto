@@ -59,7 +59,6 @@ while (ronda <= 7) {
     let turno = 0
     while (turno < jugadores.length) {
 // AUMENTO DE LA CANTIDAD DE COLORES PARA MEMORIZAR
-//-----CAMBIO CON FUNCION DE FLECHA-----
         let secuencia = generarSecuencia(colores, ronda)
 //TURNO DEL JUGADOR
         alert("Turno de " + jugadores[turno] + "\nMemoriza:\n" +  secuencia.join(" ")
@@ -81,13 +80,11 @@ while (ronda <= 7) {
         turno++
     }
 //MARCADOR DE PUNTAJES
-//-----CAMBIO CON FUNCION DE FLECHA-----
     alert(armarMarcador(jugadores, puntajes))
 
     ronda++
 }
 // SE DA EL GANADOR DEL NIVEL 1
-//-----CAMBIO CON FUNCION DE FLECHA-----
 let ganador = obtenerGanador(puntajes)
 
 //ANUNCIO DE GANADOR
@@ -150,13 +147,11 @@ if (continuar.toLowerCase() !== "si") {
             turno2++
         }
 //MARCADOR DE PUNTAJES
-//-----CAMBIO CON FUNCION DE FLECHA-----
         alert(armarMarcador(jugadores, puntajes))
 
         ronda2++
     }
 // SE DA EL GANADOR DEL NIVEL 2
-//-----CAMBIO CON FUNCION DE FLECHA-----
     let ganador2 = obtenerGanador(puntajes)
 
 //ANUNCIO DE GANADOR
@@ -198,7 +193,6 @@ if (continuar.toLowerCase() !== "si") {
 
 //DIFERENCIA CON LOS NIVELES ANTERIORES: SE USAN PERSONAJES DISNEY
 // AUMENTO DE LA CANTIDAD DE PERSONAJES PARA MEMORIZAR- UNO POR RONDA
-//-----CAMBIO CON FUNCION DE FLECHA-----
                 let secuenciaPersonajes = generarSecuencia(personajes, ronda3)
 //TURNO DEL JUGADOR
                 alert("Turno de " + jugadores[turno3] + "\nMemoriza:\n" +  secuenciaPersonajes.join(" ")
@@ -220,13 +214,11 @@ if (continuar.toLowerCase() !== "si") {
                 turno3++
             }
 //MARCADOR DE PUNTAJES
-//-----CAMBIO CON FUNCION DE FLECHA-----
             alert(armarMarcador(jugadores, puntajes))
 
             ronda3++
         }
 // SE DA EL GANADOR DEL NIVEL 3
-//-----CAMBIO CON FUNCION DE FLECHA-----
         let ganador3 = obtenerGanador(puntajes)
 
 //ANUNCIO DE GANADOR
